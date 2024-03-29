@@ -10,13 +10,13 @@ function Catalog() {
             </div>
             <div className='max-w-lg w-full'>
                 <ul className='flex justify-around space-x-5 ml-4'>
-                    <li>Live Shows</li>
-                    <li>Streams</li>
-                    <li>Movies</li>
-                    <li>Plays</li>
-                    <li>Events</li>
-                    <li>Sports</li>
-                    <li>Activities</li>
+                    <li className='cursor-pointer'>Live Shows</li>
+                    <li className='cursor-pointer'>Streams</li>
+                    <li className='cursor-pointer'>Movies</li>
+                    <li className='cursor-pointer'>Plays</li>
+                    <li className='cursor-pointer'>Events</li>
+                    <li className='cursor-pointer'>Sports</li>
+                    <li className='cursor-pointer'>Activities</li>
                 </ul>
             </div>
 
