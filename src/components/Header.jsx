@@ -7,7 +7,7 @@ function Header() {
     return (
         <div className='m-2 p-2 flex justify-around items-center'>
             <div>
-                <h1 className='font-bold text-red-600'>BookUsNow</h1>
+                <h1 className='text-xl font-bold text-red-600'>BookUsNow</h1>
             </div>
             <div className='flex max-w-2xl w-full'>
                 <div className='flex'>
