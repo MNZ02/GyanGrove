@@ -2,6 +2,7 @@ import Header from "./components/Header"
 import Catalog from "./components/Catalog"
 import Body from "./components/Body"
 import Events from "./components/Events"
+import Shows from "./components/Shows"
 function App() {
 
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <Catalog />
       <Body />
+      <Shows />
       <Events />
     </>
   )
