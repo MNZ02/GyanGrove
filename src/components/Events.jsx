@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import locationSvg from '../assets/location.svg';
 import rightArrowBlackSvg from '../assets/right-arrow-black.svg';
+import loadingSvg from '../assets/loading.svg';
+import Shimmer from './Shimmer';
 
 function Events() {
     const [events, setEvents] = useState([]);
-    const [loading, setLoading] = useState(true);
     const [page, setPage] = useState(1);
-    const [hasMore, setHasMore] = useState(true);
+    const [loading, setLoading] = useState(false);
+
 
     const converturl = (url) => {
         const id = url.match(/\/d\/([-\w]+)/)[1];
@@ -25,17 +27,14 @@ function Events() {
         return new Date(dateString).toLocaleDateString('en-US', options);
     };
 
-    const fetchData = async () => {
+    const fetchData = async (pageNumber) => {
         try {
             setLoading(true);
-            const response = await fetch(`https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=${page}&type=upcoming`);
+            const response = await fetch(`https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=${pageNumber}&type=upcoming`);
             const data = await response.json();
-            if (data.events.length === 0) {
-                setHasMore(false);
-            } else {
-                setEvents((prevEvents) => [...prevEvents, ...data.events]);
-                setPage((prevPage) => prevPage + 1);
-            }
+            console.log(data)
+            console.log(page)
+            setEvents((prevEvents) => [...prevEvents, ...data.events]);
         } catch (error) {
             console.log(error);
         }
@@ -44,22 +43,25 @@ function Events() {
         }
     };
 
+    useEffect(() => {
+        fetchData(page);
+    }, [page])
+
     const handleScroll = () => {
-        if (window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight && hasMore) {
-            fetchData();
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight && !loading) {
+            setLoading(true);
+            setPage((prevPage) => prevPage + 1);
         }
     };
 
     useEffect(() => {
-        fetchData();
-    }, []);
-
-    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [hasMore]);
+    }, [loading]);
+
 
     return (
         <div className='flex flex-wrap -space-x-14 ml-48 mt-8'>
@@ -69,6 +71,8 @@ function Events() {
                     <img className='w-5' src={rightArrowBlackSvg} alt="rightArrow" />
                 </div>
             </div>
+
+            {loading && <Shimmer />}
 
             {events.map((event, index) => (
                 <div key={index} className='m-2 p-2'>
@@ -89,8 +93,13 @@ function Events() {
                         </div>
                     </div>
                 </div>
+
             ))}
-            {loading && <p>Loading...</p>}
+            {loading &&
+                <div className='flex justify-center items-center ml-24 h-screen'>
+                    <img className='w-16 mx-auto' src={loadingSvg} alt="loading" />
+                </div>}
+
         </div>
     );
 }
