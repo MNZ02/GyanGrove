@@ -3,6 +3,7 @@ import Catalog from "./components/Catalog/Catalog"
 import Body from "./components/Body/Body"
 import Events from "./components/events/Events"
 import Shows from "./components/Shows/Shows"
+import Carousel from "./components/Carousel/Carousel"
 
 function App() {
 
@@ -11,7 +12,8 @@ function App() {
       <Header />
       <Catalog />
       <Body />
-      <Shows />
+      <Carousel />
+      {/* <Shows /> */}
       <Events />
     </>
   )

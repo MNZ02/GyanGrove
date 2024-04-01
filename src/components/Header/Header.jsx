@@ -23,7 +23,7 @@ function Header() {
         <div className='m-2 p-2 flex justify-around items-center'>
             {isMobile ? (
                 // Mobile header layout
-                <div className="flex justify-between w-full">
+                <div className="flex justify-between w-full px-2">
                     <div className='flex flex-col space-x-2'>
                         <h1 className='text-xl font-bold text-red-600'>BookUsNow</h1>
                         <div className='flex space-x-2'>

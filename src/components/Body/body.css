@@ -1,17 +1,21 @@
 @media only screen and (max-width: 768px) {
-    
     .text-5xl {
         font-size: 1.4rem !important;
     }
+
     .banner {
-        height: 500px !important;
-        width: 100% !important;
+        height: 500px !important; 
+        object-fit: cover !important;
     }
 
-    .max-w-2xl {
-        margin-top: 60px;
-        max-width: 80% !important;
+    .header {
+        margin-top: 10rem !important; 
+        text-align: center !important;
+        margin-left: 12px !important;
     }
 
-   
+    .para {
+        margin-top: 6px !important;
+        margin-left: 12px !important;
+    }
 }

@@ -41,8 +41,8 @@ function Shows() {
     
 
     return (
-        <div className='flex ml-24 relative z-10 flex-nowrap'>
-            <div className='flex space-x-2 absolute -mt-52'>
+        <div className='flex ml-24 z-10 flex-nowrap'>
+            <div className='flex space-x-2 relative'>
                 <h1 className='font-semibold text-lg ml-36 text-white'>Recommended Shows</h1>
                 <img className='w-5' src={rightArrowWhiteSvg} alt="rightArrow" />
             </div>
