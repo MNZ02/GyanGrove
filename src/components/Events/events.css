@@ -1,0 +1,11 @@
+@media only screen and (max-width: 768px) {
+    
+    .ml-48 {
+        margin-left: 0 !important;
+    }
+    .mt-8 {
+        margin-top: 8px !important;
+    }
+    
+   
+}

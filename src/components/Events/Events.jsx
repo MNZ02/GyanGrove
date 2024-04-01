@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import locationSvg from '../assets/location.svg';
-import rightArrowBlackSvg from '../assets/right-arrow-black.svg';
-import loadingSvg from '../assets/loading.svg';
-import Shimmer from './Shimmer';
+import locationSvg from '../../assets/location.svg';
+import rightArrowBlackSvg from '../../assets/right-arrow-black.svg';
+import loadingSvg from '../../assets/loading.svg'
+import Shimmer from '../Shimmer';
+import './events.css';
 
 function Events() {
     const [events, setEvents] = useState([]);
