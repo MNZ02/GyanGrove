@@ -69,7 +69,7 @@ function Events() {
             <div className='w-full'>
                 <div className='flex space-x-2 -ml-12'>
                     <h1 className='font-semibold text-lg ml-24'>Upcoming Events</h1>
-                    <img className='w-5' src={rightArrowBlackSvg} alt="rightArrow" />
+                    <img className='w-5 right-arrow' src={rightArrowBlackSvg} alt="rightArrow" />
                 </div>
             </div>
 

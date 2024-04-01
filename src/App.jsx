@@ -1,8 +1,8 @@
-import Header from "./components/Header"
-import Catalog from "./components/Catalog"
-import Body from "./components/Body"
-import Events from "./components/Events/Events"
-import Shows from "./components/Shows"
+import Header from "./components/Header/Header"
+import Catalog from "./components/Catalog/Catalog"
+import Body from "./components/Body/Body"
+import Events from "./components/events/Events"
+import Shows from "./components/Shows/Shows"
 
 function App() {
 
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Catalog />
       <Body />
-      {/* <Shows /> */}
+      <Shows />
       <Events />
     </>
   )

@@ -1,0 +1,17 @@
+@media only screen and (max-width: 768px) {
+    
+    .text-5xl {
+        font-size: 1.4rem !important;
+    }
+    .banner {
+        height: 500px !important;
+        width: 100% !important;
+    }
+
+    .max-w-2xl {
+        margin-top: 60px;
+        max-width: 80% !important;
+    }
+
+   
+}

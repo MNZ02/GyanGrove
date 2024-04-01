@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
-import rightArrowWhiteSvg from '../assets/right-arrow-white.svg';
-import locationWhiteSvg from '../assets/location-white.svg';
+import rightArrowWhiteSvg from '../../assets/right-arrow-white.svg';
+import locationWhiteSvg from '../../assets/location-white.svg';
+import './shows.css'
 
 function Shows() {
     const [shows, setShows] = useState([]);
-    const containerRef = useRef(null);
 
     const converturl = (url) => {
         const id = url.match(/\/d\/([-\w]+)/)[1];
@@ -38,22 +38,10 @@ function Shows() {
         fetchData();
     }, []);
 
-    useEffect(() => {
-        const element = containerRef.current;
-        const handleWheel = (event) => {
-            event.preventDefault();
-            element.scrollBy({
-                left: event.deltaY < 0 ? -30 : 30,
-            });
-        };
-        element.addEventListener('wheel', handleWheel);
-        return () => {
-            element.removeEventListener('wheel', handleWheel);
-        };
-    }, []);
+    
 
     return (
-        <div className='flex ml-24 relative z-10 flex-nowrap' ref={containerRef}>
+        <div className='flex ml-24 relative z-10 flex-nowrap'>
             <div className='flex space-x-2 absolute -mt-52'>
                 <h1 className='font-semibold text-lg ml-36 text-white'>Recommended Shows</h1>
                 <img className='w-5' src={rightArrowWhiteSvg} alt="rightArrow" />
