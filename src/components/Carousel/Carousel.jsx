@@ -15,7 +15,7 @@ function Carousel() {
         autoplay: false,
         responsive: [
             {
-                breakpoint: 768, // Breakpoint for mobile devices
+                breakpoint: 768, 
                 settings: {
                     slidesToShow: 2, 
                 },
@@ -60,20 +60,20 @@ function Carousel() {
         <div className='ml-24 relative z-10 space-x-2'>
             <div className='flex absolute shows'>
                 <h1 className='font-semibold text-lg ml-36 mt-12 text-white header'>Recommended Shows</h1>
-                <img className='w-5 mt-12' src={rightArrowWhiteSvg} alt="rightArrow" />
+                <img className='w-5 mt-12 img' src={rightArrowWhiteSvg} alt="rightArrow" />
             </div>
             <Slider {...settings}>
                 {shows.map((show, index) => (
                     <div className='slide-item' key={index}>
                         <div className='space-x-16 ml-12 mb-12'>
                             <img className='max-w-md w-full ml-28 mt-32 object-cover rounded-lg image' src={converturl(show.imgUrl)} alt="showImage" />
-                            <div className='flex -mt-28 px-3 items-center max-w-sm w-full justify-between'>
-                                <p className='text-[14px] px-4 ml-16 text-white'>{show.eventName}</p>
-                                <p className='text-[9px] text-white mt-1'>{formatDate(show.date)}</p>
+                            <div className='flex -mt-28 items-center w-full justify-between space-x-14'>
+                                <p className='text-[14px] ml-16 text-white px-1 event-name'>{show.eventName}</p>
+                                <p className='text-[9px] text-white mt-1 event-date'>{formatDate(show.date)}</p>
                             </div>
-                            <div className='flex px-6 items-center mt-2 max-w-sm w-full justify-between'>
+                            <div className='flex items-center mt-2 max-w-sm w-full justify-between info'>
                                 <p className='text-[9px] px-4 ml-14 text-white'>{show.cityName}</p>
-                                <p className='text-[9px] text-white'>{convertWeather(show.weather)} | {Math.floor(show.distanceKm / 100)} Km</p>
+                                <p className='text-[9px] text-white weather'>{convertWeather(show.weather)} | {Math.floor(show.distanceKm / 100)} Km</p>
                             </div>
                         </div>
                     </div>

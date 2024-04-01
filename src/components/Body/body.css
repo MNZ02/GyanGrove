@@ -4,18 +4,23 @@
     }
 
     .banner {
-        height: 500px !important; 
+        height: 600px !important; 
         object-fit: cover !important;
     }
 
-    .header {
-        margin-top: 10rem !important; 
+    .header1 {
+        
         text-align: center !important;
         margin-left: 12px !important;
+        position: relative !important;
     }
 
     .para {
-        margin-top: 6px !important;
+        margin-top: 12px !important;
         margin-left: 12px !important;
+    }
+
+    body {
+        width: 100vw !important;
     }
 }
